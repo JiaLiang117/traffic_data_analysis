@@ -1,4 +1,3 @@
-import sys
 import pickle
 import json
 from math import sqrt
@@ -114,8 +113,8 @@ def calculate_rms(actual, predict):
 def main():
 
     
-    source_path = sys.argv[1]
-    output_path = sys.argv[2]
+    source_path = config["source_path"]
+    output_path = config["output_path"]
 
     train = Train(source_path,config)
     train.extract()

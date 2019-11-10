@@ -12,4 +12,4 @@ fi
 echo "Which model to deploy? "
 read input
 
-python mlp/deploy.py "models/output.pkl" "https://aisgaiap.blob.core.windows.net/aiap5-assessment-data/traffic_data.csv" $input
+python mlp/deploy.py "models/output.pkl" "https://aisgaiap.blob.core.windows.net/aiap5-assessment-data/traffic_data.csv" "output/predictions.csv" $input

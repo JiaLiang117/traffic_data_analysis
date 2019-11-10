@@ -7,7 +7,7 @@ from sklearn.metrics import mean_squared_error
 import sys
 
 
-def main(model_path, data_path, model_choice):
+def main(model_path, data_path, output_path, model_choice):
 
     with open(model_path,"rb") as model:
         models = pickle.load(model)
@@ -27,7 +27,8 @@ def main(model_path, data_path, model_choice):
     rms = calculate_rms(y, y_pred)
     print(rms)
 
-    return y_pred
+    pd.DataFrame(y_pred, columns=["predicted_traffic_volume"]).to_csv(output_path, index=False)
+    
 
 
 def calculate_rms(actual, predict):
@@ -73,5 +74,6 @@ if __name__ == "__main__":
 
     model_path = sys.argv[1]
     data_path = sys.argv[2]
-    model_choice = sys.argv[3]
-    main(model_path, data_path, model_choice)
+    output_path = sys.argv[3]
+    model_choice = sys.argv[4]
+    main(model_path, data_path, output_path, model_choice)
