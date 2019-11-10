@@ -1,0 +1,2 @@
+python mlp/train.py https://aisgaiap.blob.core.windows.net/aiap5-assessment-data/traffic_data.csv models/output.pkl
+python mlp/deploy.py "models/output.pkl" "https://aisgaiap.blob.core.windows.net/aiap5-assessment-data/traffic_data.csv" "model1"
